@@ -1,0 +1,561 @@
+# Scriptify AI Professional Neon Website
+
+Create a file named:
+
+```text
+index.html
+```
+
+Then paste this complete code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scriptify AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#00ffff22;
+      border-radius:50%;
+      filter:blur(120px);
+      top:-100px;
+      left:-100px;
+      z-index:-1;
+    }
+
+    body::after{
+      content:'';
+      position:fixed;
+      width:400px;
+      height:400px;
+      background:#8b5cf622;
+      border-radius:50%;
+      filter:blur(120px);
+      bottom:-100px;
+      right:-100px;
+      z-index:-1;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:25px 70px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(0,0,0,0.3);
+      backdrop-filter:blur(15px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:700;
+      color:#00ffff;
+      text-shadow:0 0 15px #00ffff;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      margin-left:25px;
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    nav a:hover{
+      color:#00ffff;
+      text-shadow:0 0 10px #00ffff;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      padding:120px 20px;
+    }
+
+    .hero h1{
+      font-size:80px;
+      margin-bottom:20px;
+      line-height:1.1;
+    }
+
+    .hero span{
+      color:#00ffff;
+      text-shadow:0 0 20px #00ffff;
+    }
+
+    .hero p{
+      max-width:850px;
+      color:#cbd5e1;
+      font-size:20px;
+      line-height:1.8;
+    }
+
+    .hero-buttons{
+      margin-top:40px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      margin:10px;
+      border-radius:12px;
+      text-decoration:none;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    .primary{
+      background:#00ffff;
+      color:black;
+      box-shadow:0 0 20px #00ffff;
+    }
+
+    .primary:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 40px #00ffff;
+    }
+
+    .secondary{
+      border:2px solid #00ffff;
+      color:#00ffff;
+    }
+
+    .secondary:hover{
+      background:#00ffff;
+      color:black;
+      box-shadow:0 0 30px #00ffff;
+    }
+
+    section{
+      padding:100px 80px;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:45px;
+      margin-bottom:60px;
+      color:#00ffff;
+      text-shadow:0 0 15px #00ffff;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:35px;
+      border-radius:20px;
+      backdrop-filter:blur(12px);
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 25px #00ffff55;
+      border-color:#00ffff;
+    }
+
+    .card h3{
+      color:#00ffff;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .card p{
+      color:#cbd5e1;
+      line-height:1.7;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .stat-box{
+      background:rgba(255,255,255,0.05);
+      padding:40px;
+      border-radius:20px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-box h2{
+      color:#00ffff;
+      font-size:50px;
+      text-shadow:0 0 15px #00ffff;
+    }
+
+    .stat-box p{
+      color:#cbd5e1;
+      margin-top:10px;
+    }
+
+    .sop-container{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:30px;
+    }
+
+    .sop-box{
+      background:rgba(255,255,255,0.05);
+      border-left:5px solid #00ffff;
+      padding:30px;
+      border-radius:16px;
+      line-height:1.9;
+      color:#dbeafe;
+    }
+
+    .sop-box h3{
+      margin-bottom:15px;
+      color:#00ffff;
+    }
+
+    .sop-box ul{
+      padding-left:20px;
+      margin-top:15px;
+    }
+
+    .sop-box li{
+      margin-bottom:10px;
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      color:#cbd5e1;
+      font-size:18px;
+      margin-bottom:25px;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:#94a3b8;
+      background:#020617;
+    }
+
+    @media(max-width:768px){
+
+      header{
+        padding:20px;
+        flex-direction:column;
+      }
+
+      nav{
+        margin-top:15px;
+      }
+
+      .hero h1{
+        font-size:50px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      section{
+        padding:80px 20px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Scriptify AI</div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#sop">SOP</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+
+    <h1>
+      Powering The Future Of <span>AI Data Solutions</span>
+    </h1>
+
+    <p>
+      Scriptify AI specializes in AI data annotation, data labeling,
+      multilingual transcription, and translation services for advanced
+      AI model training and enterprise solutions.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#services" class="btn primary">
+        Explore Services
+      </a>
+
+      <a href="#contact" class="btn secondary">
+        Contact Us
+      </a>
+    </div>
+
+  </section>
+
+  <section id="about">
+
+    <h2 class="section-title">About Scriptify AI</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>AI Data Experts</h3>
+        <p>
+          We provide high-quality AI data annotation and labeling services
+          for machine learning and enterprise AI systems.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Multilingual Solutions</h3>
+        <p>
+          Our team handles transcription and translation projects across
+          multiple languages with high accuracy and quality assurance.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Scalable Workforce</h3>
+        <p>
+          With 500 employees and 5 specialized organization teams,
+          Scriptify AI delivers scalable and reliable AI data operations.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="stats">
+
+      <div class="stat-box">
+        <h2 id="employees">0</h2>
+        <p>Employees</p>
+      </div>
+
+      <div class="stat-box">
+        <h2 id="teams">0</h2>
+        <p>Teams</p>
+      </div>
+
+      <div class="stat-box">
+        <h2 id="projects">0</h2>
+        <p>AI Projects</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="services">
+
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>AI Data Annotation</h3>
+        <p>
+          High-quality annotation services for NLP, computer vision,
+          speech recognition, and AI model training.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Data Labeling</h3>
+        <p>
+          Accurate image, text, audio, and video labeling solutions for
+          enterprise-scale datasets.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Transcription</h3>
+        <p>
+          Multilingual audio transcription services with quality-focused
+          workflows and standardized formatting.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Translation</h3>
+        <p>
+          Natural, context-aware translations optimized for multilingual
+          AI training and localization.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="sop">
+
+    <h2 class="section-title">SOP For Clients</h2>
+
+    <div class="sop-container">
+
+      <div class="sop-box">
+        <h3>Project Workflow</h3>
+
+        <p>
+          Scriptify AI follows a structured multilingual workflow:
+        </p>
+
+        <ul>
+          <li>Transcription → Translation → Final Review</li>
+          <li>Maintain original meaning, tone, and context</li>
+          <li>Deliver clean, natural, and high-quality output</li>
+          <li>Ensure AI model training compatibility</li>
+        </ul>
+      </div>
+
+      <div class="sop-box">
+        <h3>Translation Standards</h3>
+
+        <ul>
+          <li>Focus on meaning rather than literal word translation</li>
+          <li>Keep conversational flow natural and culturally accurate</li>
+          <li>Avoid unnecessary fillers like “um” and “ah”</li>
+          <li>Maintain clarity and readability across languages</li>
+        </ul>
+      </div>
+
+      <div class="sop-box">
+        <h3>Slang & Jargon Handling</h3>
+
+        <ul>
+          <li>Do not translate slang word-for-word</li>
+          <li>Use culturally appropriate equivalents</li>
+          <li>Preserve conversational tone and intent</li>
+          <li>Technical jargon such as API, NLP, Backend, ASR must be preserved accurately</li>
+        </ul>
+      </div>
+
+      <div class="sop-box">
+        <h3>PII Protection</h3>
+
+        <ul>
+          <li>All personal information is protected using [PII] tags</li>
+          <li>Names, addresses, phone numbers, and IDs are masked</li>
+          <li>Strict confidentiality and compliance standards are followed</li>
+        </ul>
+      </div>
+
+      <div class="sop-box">
+        <h3>Tools & Platforms</h3>
+
+        <ul>
+          <li>Smartcat</li>
+          <li>Phrase</li>
+          <li>Label Studio</li>
+          <li>Prodigy</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="contact" class="contact">
+
+    <h2 class="section-title">Contact Scriptify AI</h2>
+
+    <p>
+      Ready to scale your AI data operations with professional annotation,
+      transcription, and translation services?
+    </p>
+
+    <a href="#" class="btn primary" onclick="showMessage()">
+      Get Started
+    </a>
+
+  </section>
+
+  <footer>
+    © 2026 Scriptify AI • Professional AI Data Services
+  </footer>
+
+  <script>
+
+    function animateValue(id,start,end,duration){
+
+      let current=start;
+      const range=end-start;
+      const increment=end>start ? 1 : -1;
+      const stepTime=Math.abs(Math.floor(duration/range));
+
+      const obj=document.getElementById(id);
+
+      const timer=setInterval(function(){
+
+        current += increment;
+        obj.innerHTML=current + '+';
+
+        if(current==end){
+          clearInterval(timer);
+        }
+
+      },stepTime);
+
+    }
+
+    animateValue('employees',0,500,2000);
+    animateValue('teams',0,5,1500);
+    animateValue('projects',0,120,2200);
+
+    function showMessage(){
+      alert('Welcome to Scriptify AI!');
+    }
+
+  </script>
+
+</body>
+</html>
+```
